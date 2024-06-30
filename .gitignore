@@ -1,5 +1,5 @@
 # Ignorar el entorno virtual
-myenv/
+fundenv/
 
 # Ignorar archivos de configuración de sistema operativo
 .DS_Store
