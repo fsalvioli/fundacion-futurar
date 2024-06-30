@@ -1,13 +1,39 @@
 {
-    "builds": [{
+    "builds": [
+      {
         "src": "news_page/wsgi.py",
         "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    }],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "news_page/wsgi.py"
+        "config": {
+          "maxLambdaSize": "15mb",
+          "runtime": "python3.9"
         }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/static/(.*)",
+        "dest": "core/static/$1"
+      },
+      {
+        "src": "/media/(.*)",
+        "dest": "media/$1"
+      },
+      {
+        "src": "/favicon.ico",
+        "dest": "static/images/logo.png"
+      },
+      {
+        "src": "/sitemap.xml",
+        "dest": "core/static/sitemap.xml"
+      },
+      {
+        "src": "/manifest.json",
+        "dest": "core/static/manifest.json"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "news_page/wsgi.py"
+      }
     ]
-}
+  }
+  
