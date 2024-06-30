@@ -13,13 +13,13 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 #from dotenv import load_dotenv
-import environ
+#import environ
 
 
 # Cargar variables de entorno desde .env
 #load_dotenv()
-env = environ.Env() 
-environ.Env.read_env()
+#env = environ.Env() 
+#environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
