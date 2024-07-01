@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/
 
 import os
 from django.core.wsgi import get_wsgi_application
-import settings
+from django.conf import settings
 
 
 if os.environ.get('DJANGO_ENV') == 'production':
