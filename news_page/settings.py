@@ -32,7 +32,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-tzdn72ursn0fb#7)dfcr*o47^4(i7@co4#darpph5_a=j=5p1f"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = ['.vercel.app']
 
@@ -115,12 +116,21 @@ WSGI_APPLICATION = "news_page.wsgi.application"
 
 import dj_database_url
 SUPABASE_DB_URL = os.environ.get("SUPABASE_DB_URL")
-# Use the Supabase database configuration
-DATABASES = {
-    "default": dj_database_url.config(
-        default=SUPABASE_DB_URL, conn_max_age=600
-    )
-}
+if SUPABASE_DB_URL:
+    # Use the Supabase database configuration
+    DATABASES = {
+        "default": dj_database_url.config(
+            default=SUPABASE_DB_URL, conn_max_age=600
+        )
+    }
+else:
+    # Use the SQLite database configuration for development
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 
