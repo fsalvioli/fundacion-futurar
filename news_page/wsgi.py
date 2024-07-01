@@ -13,13 +13,13 @@ from django.conf import settings
 
 #os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'news_page.settings')
 
-#if os.environ.get('DJANGO_ENV') == 'production':
-#    app = get_wsgi_application()
-#else:
-#    settings.configure()
-#    application = get_wsgi_application()
+if os.environ.get('DJANGO_ENV') == 'production':
+    app = get_wsgi_application()
+else:
+    settings.configure()
+    application = get_wsgi_application()
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'news_page.settings')
-settings.configure()
-application = get_wsgi_application()
-app = application
+#os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'news_page.settings')
+#settings.configure()
+#application = get_wsgi_application()
+#app = application
