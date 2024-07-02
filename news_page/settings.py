@@ -29,14 +29,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-tzdn72ursn0fb#7)dfcr*o47^4(i7@co4#darpph5_a=j=5p1f"
-
-# SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-tzdn72ursn0fb#7)dfcr*o47^4(i7@co4#darpph5_a=j=5p1f')
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
-DJANGO_ENV = os.environ.get('DJANGO_ENV')
-
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '127.0.0.1').split(",")
 
 
 # Application definition
@@ -116,6 +111,7 @@ WSGI_APPLICATION = "news_page.wsgi.application"
 #}
 
 import dj_database_url
+DJANGO_ENV = os.environ.get('DJANGO_ENV')
 SUPABASE_DB_URL = os.environ.get("SUPABASE_DB_URL")
 if SUPABASE_DB_URL:
     # Use the Supabase database configuration
