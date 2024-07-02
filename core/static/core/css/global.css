@@ -1,17 +1,4 @@
-@font-face {
-    font-family: 'arialroundedmtbold';
-    src: url('../fonts/arialroundedmtbold.woff2') format('woff2'),
-         url('../fonts/arialroundedmtbold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'LiberationSans';
-    src: url('../fonts/LiberationSans-Regular.woff2') format('woff2'),
-         url('../fonts/LiberationSans-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+
 
 body {
     font-size: 15px;
