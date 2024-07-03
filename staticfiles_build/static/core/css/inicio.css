@@ -48,3 +48,13 @@
     transform: scale(1.05); /* Efecto hover para agrandar ligeramente las imágenes */
     transition: transform 0.3s ease;
 }
+
+#inicio ul .card-link {
+    background-color: #ffbf91; /* Color naranja suave */
+    border-radius: 15px;
+    padding: 8px;
+    margin: 7px;
+    width: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
