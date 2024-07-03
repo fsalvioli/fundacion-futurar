@@ -35,18 +35,18 @@
 }
 
 #inicio ul img {
-    width: 150px;
-    height: 150px;
-    margin: 5px;
-    margin-right: 20px;
+    max-width: 50px; /* Establece el ancho deseado */
+    height: auto; /* Altura automática para mantener la proporción */
     border-radius: 10px;
     object-fit: cover; /* Ajusta la imagen para cubrir el área sin distorsionar */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    margin: 5px; /* Añade un margen de 5px entre cada imagen */
 }
 
 #inicio ul img:hover {
-    transform: scale(1.05); /* Efecto hover para agrandar ligeramente las imágenes */
+    transform: scale(0.80); /* Efecto hover para agrandar ligeramente las imágenes */
     transition: transform 0.3s ease;
+    background-color: #d79a6f;
 }
 
 #inicio ul .card-link {
