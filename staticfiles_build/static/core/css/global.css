@@ -48,6 +48,7 @@ body.high-contrast .card{
 }
 body.high-contrast .accessibility-controls button {
     background-color: #d3dbd9;
+    color: #2c2c2c;
 }
 body.high-contrast .accessibility-controls button:hover {
     background-color: #3a3a3a;
@@ -127,7 +128,7 @@ body.high-contrast .contact-form input,
     text-align: center; /* Centra el texto horizontalmente */
     color: #1f2747; /* Color del texto */
     /*background-color: #ffbf91;*/
-    font-family: 'arialroundedmtbold';
+    font-family: 'LiberationSansRegular';
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de tarjeta */
     width: calc(100% - 60px); /* Ajusta el ancho del header-card */
 }
@@ -157,13 +158,13 @@ body.high-contrast .contact-form input,
 .header-card h2 {
     margin: 0; /* Quita el margen del h1 */
     font-size: 2em; /* Ajusta el tamaño del h1 */
-    font-family: 'arialroundedmtbold';
+    font-family: 'LiberationSansRegular';
 }
 
 .header-card p {
     margin: 0; /* Añade un pequeño margen superior */
     font-size: 2em; /* Ajusta el tamaño del párrafo */
-    font-family: 'arialroundedmtbold';
+    font-family: 'LiberationSansRegular';
 }
 
 .logo-container {
@@ -274,9 +275,10 @@ body.high-contrast .contact-form input,
     margin-right: 20px;
 }
 .accessibility-controls button {
-    background-color: #ffbf91;
+    background-color: #0194be;
     border: none;
     border-radius: 50%;
+    color: #3a3a3a;
     width: 40px;
     height: 40px;
     margin-left: 10px;
@@ -285,7 +287,7 @@ body.high-contrast .contact-form input,
     transition: background-color 0.3s;
 }
 .accessibility-controls button:hover {
-    background-color: #ff9a52;
+    background-color: #0fc3e8;
 }
 
 /* Estilos para el footer */

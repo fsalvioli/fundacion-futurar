@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     "core",
     'ckeditor',
     'ckeditor_uploader',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
@@ -167,8 +169,20 @@ USE_TZ = True
 
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+import cloudinary
+import cloudinary.uploader
+from cloudinary.utils import cloudinary_url
+
+# Configuration       
+cloudinary.config( 
+    cloud_name = "dazpno03f", 
+    api_key = "211848279163441", 
+    api_secret = "z-51at-Rtcm6wKfJthATgPuRycE", # Click 'View Credentials' below to copy your API secret
+    secure=True
+)
+
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 STATIC_URL = "static/"
