@@ -9,7 +9,7 @@ class Inicio(models.Model):
     mensaje = models.TextField()
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
     fecha_modificacion = models.DateTimeField(auto_now=True)
-    imagen = CloudinaryField('image')  #models.ImageField(upload_to='noticias/', blank=True,null=True)
+    imagen = models.ImageField(upload_to='noticias/', blank=True,null=True)
     video = models.URLField(blank=True, null=True)
     
     def __str__(self):
