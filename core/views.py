@@ -58,6 +58,7 @@ def donaciones(request):
                 fail_silently=False,
             )
             mensaje_exito = True  # Marca como enviado exitosamente
+            form = ContactoForm()  # Resetea el formulario
     else:
         form = ContactoForm()
 
@@ -88,6 +89,7 @@ def contacto(request):
                 fail_silently=False,
             )
             mensaje_exito = True  # Marca como enviado exitosamente
+            form = ContactoForm()  # Resetea el formulario
     else:
         form = ContactoForm()
 
