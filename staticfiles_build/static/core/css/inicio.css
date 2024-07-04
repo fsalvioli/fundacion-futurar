@@ -39,7 +39,7 @@
     height: auto; /* Altura automática para mantener la proporción */
     border-radius: 10px;
     object-fit: cover; /* Ajusta la imagen para cubrir el área sin distorsionar */
-    
+    justify-content: center;
     margin: 5px; /* Añade un margen de 5px entre cada imagen */
 }
 
