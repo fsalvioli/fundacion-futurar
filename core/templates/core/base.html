@@ -104,10 +104,10 @@
                     <img src="{% static 'images/008-contacto.png' %}" alt="Icono Contacto">
                     Contacto
                 </a></li>
-                <li><a href="{% url 'admin:index' %}">
+                <!-- <li><a href="{% url 'admin:index' %}">
                     <img src="{% static 'images/009-admin.png' %}" alt="Icono Admin">
                     Ingreso Docentes
-                </a></li>
+                </a></li> -->
             </ul>
         </div>
     </header>
@@ -127,6 +127,9 @@
     <footer>
         <div class="footer-section">
             <p>&copy; 2024 Fundación FUTURAR. Todos los derechos reservados.</p>
+            <div class="accessibility-controls">
+                <button><a href="{% url 'admin:index' %}">⚙️</a></button>
+            </div>
         </div>
     </footer>
 </body>
