@@ -1,12 +1,17 @@
 from django.shortcuts import render, redirect
 from .forms import ContactoForm, DonacionForm
+from django.core.exceptions import ObjectDoesNotExist
 from django.core.mail import send_mail
 from .models import Inicio, Nosotros, Programas, Actividades, Historias, Articulos, Donaciones, DonacionesCBU
 
 
 
 def inicio(request):
-    inicio_data = inicio_data = Inicio.objects.filter(publicado=True).latest('fecha_publicacion')
+    try:
+        inicio_data = Inicio.objects.filter(publicado=True).latest('fecha_publicacion')
+    except ObjectDoesNotExist:
+        inicio_data = None  # o puedes asignar un valor por defecto o una estructura vacía
+
     return render(request, 'core/inicio.html', {'inicio': inicio_data})
 
 def nosotros(request):
@@ -18,19 +23,35 @@ def nosotros(request):
     return render(request, 'core/nosotros.html', {'nosotros': nosotros_data})
 
 def programas(request):
-    programas_data = Programas.objects.filter(publicado=True).Programas.objects.latest('id')
+    try:
+        programas_data = Programas.objects.filter(publicado=True).Programas.objects.latest('id')
+    except ObjectDoesNotExist:
+        programas_data = None
+        
     return render(request, 'core/programas.html', {'programas': programas_data})
 
 def actividades(request):
-    actividades_data = Actividades.objects.filter(publicado=True).Actividades.objects.all()
+    try:
+        actividades_data = Actividades.objects.filter(publicado=True).Actividades.objects.all()
+    except ObjectDoesNotExist:
+        actividades_data = None
+        
     return render(request, 'core/actividades.html', {'actividades': actividades_data})
 
 def historias(request):
-    historias_data = Historias.objects.filter(publicado=True).Historias.objects.all()
+    try:
+        historias_data = Historias.objects.filter(publicado=True).Historias.objects.all()
+    except ObjectDoesNotExist:
+        historias_data = None
+    
     return render(request, 'core/historias.html', {'historias': historias_data})
 
 def articulos(request):
-    articulos_data = Articulos.objects.filter(publicado=True).Articulos.objects.all()
+    try:
+        articulos_data = Articulos.objects.filter(publicado=True).Articulos.objects.all()
+    except ObjectDoesNotExist:
+        articulos_data = None
+        
     return render(request, 'core/articulos.html', {'articulos': articulos_data})
 
 #def donaciones_cbu(request):
@@ -38,8 +59,15 @@ def articulos(request):
 #    return render(request, 'core/donaciones.html', {'donaciones_cbu':donaciones_data_cbu})
 
 def donaciones(request):
-    donaciones_data = Donaciones.objects.filter(publicado=True).Donaciones.objects.latest('id')  # Obtener el último registro de donaciones
-    donaciones_data_cbu = DonacionesCBU.objects.filter(publicado=True).DonacionesCBU.objects.all()
+    try:
+        donaciones_data = Donaciones.objects.filter(publicado=True).Donaciones.objects.latest('id')  # Obtener el último registro de donaciones
+    except ObjectDoesNotExist:
+        donaciones_data = None
+    
+    try:
+        donaciones_data_cbu = DonacionesCBU.objects.filter(publicado=True).DonacionesCBU.objects.all()
+    except ObjectDoesNotExist:
+        donaciones_data_cbu = None
     
     mensaje_exito = False
     
