@@ -6,31 +6,31 @@ from .models import Inicio, Nosotros, Programas, Actividades, Historias, Articul
 
 
 def inicio(request):
-    inicio_data = Inicio.objects.latest('fecha_publicacion')  # Obtener el último registro
+    inicio_data = inicio_data = Inicio.objects.filter(publicado=True).latest('fecha_publicacion')
     return render(request, 'core/inicio.html', {'inicio': inicio_data})
 
 def nosotros(request):
     try:
-        nosotros_data = Nosotros.objects.latest('id')  # Obtener el último registro
+        nosotros_data = Nosotros.objects.filter(publicado=True).Nosotros.objects.latest('id')  # Obtener el último registro
     except Nosotros.DoesNotExist:
         nosotros_data = None
     
     return render(request, 'core/nosotros.html', {'nosotros': nosotros_data})
 
 def programas(request):
-    programas_data = Programas.objects.latest('id')
+    programas_data = Programas.objects.filter(publicado=True).Programas.objects.latest('id')
     return render(request, 'core/programas.html', {'programas': programas_data})
 
 def actividades(request):
-    actividades_data = Actividades.objects.all()
+    actividades_data = Actividades.objects.filter(publicado=True).Actividades.objects.all()
     return render(request, 'core/actividades.html', {'actividades': actividades_data})
 
 def historias(request):
-    historias_data = Historias.objects.all()
+    historias_data = Historias.objects.filter(publicado=True).Historias.objects.all()
     return render(request, 'core/historias.html', {'historias': historias_data})
 
 def articulos(request):
-    articulos_data = Articulos.objects.all()
+    articulos_data = Articulos.objects.filter(publicado=True).Articulos.objects.all()
     return render(request, 'core/articulos.html', {'articulos': articulos_data})
 
 #def donaciones_cbu(request):
@@ -38,8 +38,8 @@ def articulos(request):
 #    return render(request, 'core/donaciones.html', {'donaciones_cbu':donaciones_data_cbu})
 
 def donaciones(request):
-    donaciones_data = Donaciones.objects.latest('id')  # Obtener el último registro de donaciones
-    donaciones_data_cbu = DonacionesCBU.objects.all()
+    donaciones_data = Donaciones.objects.filter(publicado=True).Donaciones.objects.latest('id')  # Obtener el último registro de donaciones
+    donaciones_data_cbu = DonacionesCBU.objects.filter(publicado=True).DonacionesCBU.objects.all()
     
     mensaje_exito = False
     

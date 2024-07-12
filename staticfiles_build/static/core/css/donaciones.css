@@ -34,7 +34,7 @@ h1, h2, h3 {
 
 #donaciones button {
     background-color: #ff8c00; /* Color naranja más oscuro para el botón */
-    color: white;
+    color: black;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -47,13 +47,24 @@ h1, h2, h3 {
     background-color: #e07b00; /* Color más oscuro para el hover */
 }
 
+#otro-info {
+    background-color: #fff3e0; /* Color de fondo para la info del CBU */
+    border: 1px solid #ffa726; /* Borde naranja */
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: -15px;
+    margin: 80px;
+    align-content: center;
+}
+
+
 /* contacto: */
 
 .contact-container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #ffbf91;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -62,11 +73,14 @@ h1, h2, h3 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
+    
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
+    color: #333;
+    
 }
 
 .contact-form p {
@@ -83,10 +97,11 @@ h1, h2, h3 {
 .contact-form input,
 .contact-form textarea {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid;
     border-radius: 5px;
     font-size: 16px;
     width: 90%;
+    background-color: #d3dbd9;
 }
 
 .submit-btn {

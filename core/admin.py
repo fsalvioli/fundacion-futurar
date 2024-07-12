@@ -3,8 +3,8 @@ from .models import Inicio, Nosotros, Programas, Actividades, Historias, Articul
 
 # Register your models here.
 class InicioAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'fecha_publicacion', 'fecha_modificacion','ofertas')
-    search_fields = ('titulo', 'mensaje')
+    list_display = ('titulo', 'fecha_publicacion', 'fecha_modificacion','que_ofrecemos')
+    search_fields = ('titulo', 'bienvenida')
 
 class NosotrosAdmin(admin.ModelAdmin):
     list_display = ('titulo',)

@@ -47,34 +47,21 @@ body.high-contrast .card{
     color: white;
 }
 body.high-contrast .accessibility-controls button {
-    background-color: #d3dbd9;
-    color: #2c2c2c;
+    background-color: #000000;
+    color: #feefd9;
 }
 body.high-contrast .accessibility-controls button:hover {
     background-color: #3a3a3a;
 }
 /* donaciones: */
-body.high-contrast #cbu-info{
-    background-color: #3a3a3a; /* Color de fondo para la info del CBU */
+body.high-contrast #cbu-info, #otro-info{
+    background-color: #3a3a3a; /* Color de fondo para la info del CBU */ 
     border: 1px solid #000000; /* Borde  */
     border-radius: 10px;
     padding: 15px;
     margin-top: 10px;
 }
-body.high-contrast #donaciones button {
-    background-color: #777777; /* Color naranja más oscuro para el botón */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-}
 
-body.high-contrast #donaciones button:hover {
-    background-color: #3a3a3a; /* Color más oscuro para el hover */
-}
 /* contacto: */
 body.high-contrast .contact-container {
     max-width: 600px;
@@ -105,7 +92,9 @@ body.high-contrast .contact-form input,
 .contact-form textarea {
     background-color: #d3dbd9;
 }
-
+body.high-contrast .contact-form{
+    color: #f1f1f1;
+}
 
 
 
@@ -173,10 +162,10 @@ body.high-contrast .contact-form input,
 }
 
 .logo-container img {
-    width: 150px; /* Tamaño deseado para el logo */
-    height: 150px; /* Altura automática para mantener la proporción */
+    width: 130px; /* Tamaño deseado para el logo */
+    height: 130px; /* Altura automática para mantener la proporción */
     border-radius: 100px; /* Opcional: bordes redondeados para el logo */
-    margin-top: -27px;
+    margin-top: 8px;
 }
 
 /* Menu styles and animation */
@@ -275,10 +264,10 @@ body.high-contrast .contact-form input,
     margin-right: 20px;
 }
 .accessibility-controls button {
-    background-color: #0194be;
+    background-color: #ff9a52;
     border: none;
     border-radius: 50%;
-    color: #3a3a3a;
+    color: #000000;
     width: 40px;
     height: 40px;
     margin-left: 10px;
