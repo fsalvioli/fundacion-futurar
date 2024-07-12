@@ -16,7 +16,7 @@ def inicio(request):
 
 def nosotros(request):
     try:
-        nosotros_data = Nosotros.objects.filter(publicado=True).Nosotros.objects.latest('id')  # Obtener el último registro
+        nosotros_data = Nosotros.objects.filter(publicado=True).latest('id')  # Obtener el último registro
     except Nosotros.DoesNotExist:
         nosotros_data = None
     
@@ -24,7 +24,7 @@ def nosotros(request):
 
 def programas(request):
     try:
-        programas_data = Programas.objects.filter(publicado=True).Programas.objects.latest('id')
+        programas_data = Programas.objects.filter(publicado=True).latest('id')
     except ObjectDoesNotExist:
         programas_data = None
         
@@ -32,7 +32,7 @@ def programas(request):
 
 def actividades(request):
     try:
-        actividades_data = Actividades.objects.filter(publicado=True).Actividades.objects.all()
+        actividades_data = Actividades.objects.filter(publicado=True).all()
     except ObjectDoesNotExist:
         actividades_data = None
         
@@ -40,7 +40,7 @@ def actividades(request):
 
 def historias(request):
     try:
-        historias_data = Historias.objects.filter(publicado=True).Historias.objects.all()
+        historias_data = Historias.objects.filter(publicado=True).all()
     except ObjectDoesNotExist:
         historias_data = None
     
@@ -48,7 +48,7 @@ def historias(request):
 
 def articulos(request):
     try:
-        articulos_data = Articulos.objects.filter(publicado=True).Articulos.objects.all()
+        articulos_data = Articulos.objects.filter(publicado=True).all()
     except ObjectDoesNotExist:
         articulos_data = None
         
@@ -60,12 +60,12 @@ def articulos(request):
 
 def donaciones(request):
     try:
-        donaciones_data = Donaciones.objects.filter(publicado=True).Donaciones.objects.latest('id')  # Obtener el último registro de donaciones
+        donaciones_data = Donaciones.objects.filter(publicado=True).latest('id')  # Obtener el último registro de donaciones
     except ObjectDoesNotExist:
         donaciones_data = None
     
     try:
-        donaciones_data_cbu = DonacionesCBU.objects.filter(publicado=True).DonacionesCBU.objects.all()
+        donaciones_data_cbu = DonacionesCBU.objects.filter(publicado=True).all()
     except ObjectDoesNotExist:
         donaciones_data_cbu = None
     
