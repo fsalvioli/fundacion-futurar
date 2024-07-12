@@ -291,5 +291,41 @@ footer {
     /*margin-left: 100px;
     margin-right: 100px;
     */
-    width: 100%;
+    width: 97%;
+}
+
+@media (max-width: 768px) {
+    .header-card {
+        padding: 20px;
+        width: calc(100% - 40px);
+        font-size: 14px; /* Ajusta el tamaño de fuente para pantallas pequeñas si es necesario */
+    }
+
+    .logo-container img {
+        width: 80px; /* Tamaño deseado para el logo */
+        height: 80px; /* Altura automática para mantener la proporción */
+        border-radius: 100px; /* Opcional: bordes redondeados para el logo */
+        
+    }
+
+    .header-card h1 {
+        margin: 0; /* Quita el margen del h1 */
+        font-size: 2em; /* Ajusta el tamaño del h1 */
+    }
+
+    .header-card h2 p {
+        margin: 0; /* Quita el margen del h1 */
+        font-size: 0.8em; /* Ajusta el tamaño del h1 */
+    }
+
+    .menu-card {
+        padding: 5px;
+        width: calc(30% - 30px);
+        height: 120px;
+    }
+
+    footer {
+        margin-top: 30px;
+        width: auto;
+    }
 }

@@ -132,3 +132,11 @@ form .errorlist {
 form .errorlist li {
     margin: 0;
 }
+
+@media (max-width: 768px) {
+    #otro-info {
+        padding: 10px;
+        margin-top: 0px;
+        margin: 0px;
+    }
+}

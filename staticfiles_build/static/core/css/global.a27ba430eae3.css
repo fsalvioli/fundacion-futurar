@@ -10,7 +10,7 @@ body.high-contrast {
     /*color: #f1f1f1;*/ /* Color de texto claro */
 }
 body.high-contrast .header-card{
-    background-image: url('/static/images/cloud_orange_r-bw.png'); /* Ruta de tu imagen de fondo */
+    background-image: url("/static/images/cloud_orange_r-bw.9a8646242cfc.png"); /* Ruta de tu imagen de fondo */
     /*background-image: none; */
     color: #2c2c2c;
 }
@@ -108,7 +108,7 @@ body.high-contrast .contact-form{
     padding: 5px;
 }
 .header-card {
-    background-image: url('/static/images/cloud_orange.png'); /* Ruta de tu imagen de fondo */
+    background-image: url("/static/images/cloud_orange.1a1107e5e024.png"); /* Ruta de tu imagen de fondo */
     background-size: auto; /* Asegura que la imagen cubra todo el contenedor */
     background-position: center; /* Centra la imagen */
     border-radius: 20px; /* Bordes redondeados */
@@ -264,7 +264,7 @@ body.high-contrast .contact-form{
     margin-right: 20px;
 }
 .accessibility-controls button {
-    background-color:  #ff9a52;
+    background-color: #ff9a52;
     border: none;
     font-size: 20px;
     border-radius: 50%;
