@@ -288,6 +288,8 @@ footer {
     border-radius: 15px; /* Bordes redondeados */
     box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1); /* Sombra hacia abajo */
     bottom: 0;
-    margin-left: 100px;
+    /*margin-left: 100px;
     margin-right: 100px;
+    */
+    width: 100%;
 }
