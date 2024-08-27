@@ -298,8 +298,8 @@ footer {
 
 @media (max-width: 768px) {
     .header-card {
-        padding: 20px;
-        width: calc(100% - 40px);
+        padding: 10px;
+        width: calc(100% - 55px);
         font-size: 10px; /* Ajusta el tamaño de fuente para pantallas pequeñas si es necesario */
     }
 
