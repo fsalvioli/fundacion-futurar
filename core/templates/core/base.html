@@ -12,8 +12,18 @@
     
     <script>
         function adjustTextSize(size) {
-            document.body.style.fontSize = size + 'em';
-            localStorage.setItem('fontSize', size);
+        // Selecciona todos los elementos con la clase 'adjustable-text'
+        var adjustableElements = document.querySelectorAll('.adjustable-text p, .adjustable-text h1, .adjustable-text h2, .adjustable-text h3, .adjustable-text h4, .adjustable-text h5, .adjustable-text h6');
+        
+        // Itera sobre los elementos y ajusta su tamaño de fuente
+        adjustableElements.forEach(function(element) {
+        
+            element.style.fontSize = size + 'em';
+        
+        });
+
+        // Guarda el tamaño en localStorage
+        localStorage.setItem('fontSize', size);
         }
     
         function toggleContrast() {
@@ -36,11 +46,15 @@
         }
     
         document.addEventListener('click', closeMenuIfClickedOutside);
-    
+        
         window.onload = function() {
+            // Aplicar el tamaño de fuente guardado si existe
             const fontSize = localStorage.getItem('fontSize');
             if (fontSize) {
-                document.body.style.fontSize = fontSize + 'em';
+                var adjustableElements = document.querySelectorAll('.adjustable-text p, .adjustable-text h1, .adjustable-text h2, .adjustable-text h3, .adjustable-text h4, .adjustable-text h5, .adjustable-text h6');
+                adjustableElements.forEach(function(element) {
+                    element.style.fontSize = fontSize + 'em';
+                });
             }
             const highContrast = localStorage.getItem('highContrast');
             if (highContrast === 'true') {
@@ -113,7 +127,7 @@
     </header>
     <nav>
         <div class="accessibility-controls">
-            <button onclick="adjustTextSize(1)"><strong>A</strong></button>
+            <button onclick="adjustTextSize(1.2)"><strong>A</strong></button>
             <button onclick="adjustTextSize(1.8)"><strong>A+</strong></button>
             <button onclick="toggleContrast()">🌙</button>
         </div>

@@ -81,8 +81,8 @@ def donaciones(request):
             send_mail(
                 'Nuevo mensaje de contacto',
                 f'Nombre: {nombre}\nEmail: {email}\nMensaje: {mensaje}',
-                'tu_correo@example.com',  # Cambia esto por el correo desde el cual enviarás el mensaje
-                ['destino@example.com'],  # Cambia esto por el correo al cual enviarás el mensaje
+                'futurarsinbarreras@gmail.com',  # Cambia esto por el correo desde el cual enviarás el mensaje
+                ['futurarsinbarreras@gmail.com',email],  # Cambia esto por el correo al cual enviarás el mensaje
                 fail_silently=False,
             )
             mensaje_exito = True  # Marca como enviado exitosamente
@@ -112,8 +112,8 @@ def contacto(request):
             send_mail(
                 'Nuevo mensaje de contacto',
                 f'Nombre: {nombre}\nEmail: {email}\nMensaje: {mensaje}',
-                'tu_correo@example.com',  # Cambia esto por el correo desde el cual enviarás el mensaje
-                ['destino@example.com'],  # Cambia esto por el correo al cual enviarás el mensaje
+                'futurarsinbarreras@gmail.com',  # Cambia esto por el correo desde el cual enviarás el mensaje
+                ['futurarsinbarreras@gmail.com',email],  # Cambia esto por el correo al cual enviarás el mensaje
                 fail_silently=False,
             )
             mensaje_exito = True  # Marca como enviado exitosamente

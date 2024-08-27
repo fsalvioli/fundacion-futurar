@@ -120,6 +120,7 @@ body.high-contrast .contact-form{
     font-family: 'LiberationSansRegular';
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de tarjeta */
     width: calc(100% - 60px); /* Ajusta el ancho del header-card */
+    height: 150px;
 }
 
 .menu-card {
@@ -131,7 +132,7 @@ body.high-contrast .contact-form{
     text-align: center; /* Centra el texto horizontalmente */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de tarjeta */
     width: 60px; /* Ancho de la tarjeta del menú */
-    height: 160px;
+    height: 180px;
 }
 
 
@@ -142,17 +143,18 @@ body.high-contrast .contact-form{
 
 .header-card h1 {
     margin: 0; /* Quita el margen del h1 */
-    font-size: 4em; /* Ajusta el tamaño del h1 */
+    font-size: 4em !important; /* Ajusta el tamaño del h1 */
+    white-space: break-spaces;
 }
 .header-card h2 {
     margin: 0; /* Quita el margen del h1 */
-    font-size: 2em; /* Ajusta el tamaño del h1 */
+    font-size: 2em !important; /* Ajusta el tamaño del h1 */
     font-family: 'LiberationSansRegular';
 }
 
 .header-card p {
     margin: 0; /* Añade un pequeño margen superior */
-    font-size: 2em; /* Ajusta el tamaño del párrafo */
+    font-size: 2em !important; /* Ajusta el tamaño del párrafo */
     font-family: 'LiberationSansRegular';
 }
 
@@ -178,7 +180,7 @@ body.high-contrast .contact-form{
     top: 0;
     right: -500px; /* Initially out of view */
     height: 100%;
-    width: 200px; /* Fixed width for the menu */
+    width: 220px; /* Fixed width for the menu */
     list-style-type: none;
     margin: 0;
     border-radius: 0;
@@ -220,7 +222,7 @@ body.high-contrast .contact-form{
     background-color: #ffdabf; /* Color de fondo */
     margin: 5px 0; /* Espaciado entre los elementos del menú */
     font-family: Verdana;
-    width: 180px; /* Ancho fijo para los botones */
+    width: 200px; /* Ancho fijo para los botones */
     color: #2c2c2c;
 
 }
