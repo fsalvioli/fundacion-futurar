@@ -300,7 +300,7 @@ footer {
     .header-card {
         padding: 20px;
         width: calc(100% - 40px);
-        font-size: 14px; /* Ajusta el tamaño de fuente para pantallas pequeñas si es necesario */
+        font-size: 10px; /* Ajusta el tamaño de fuente para pantallas pequeñas si es necesario */
     }
 
     .logo-container img {
