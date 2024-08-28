@@ -69,6 +69,7 @@ def donaciones(request):
     except ObjectDoesNotExist:
         donaciones_data_cbu = None
     
+    form = ContactoForm()  # Inicializar el formulario aquí
     
     if request.method == 'POST':
         form = ContactoForm(request.POST)
