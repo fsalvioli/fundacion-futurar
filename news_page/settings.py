@@ -219,7 +219,7 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': '/logs/django_error.log',
+            'filename': os.path.join(BASE_DIR, 'logs', 'django_error.log'),
         },
     },
     'loggers': {
