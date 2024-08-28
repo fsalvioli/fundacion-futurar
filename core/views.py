@@ -69,57 +69,70 @@ def donaciones(request):
     except ObjectDoesNotExist:
         donaciones_data_cbu = None
     
-    mensaje_exito = False
     
     if request.method == 'POST':
         form = ContactoForm(request.POST)
         if form.is_valid():
-            # Procesa el formulario y envía el correo electrónico
-            nombre = form.cleaned_data['nombre']
-            email = form.cleaned_data['email']
-            mensaje = form.cleaned_data['mensaje']
-            send_mail(
-                'Nuevo mensaje de contacto',
-                f'Nombre: {nombre}\nEmail: {email}\nMensaje: {mensaje}',
-                'futurarsinbarreras@gmail.com',  # Cambia esto por el correo desde el cual enviarás el mensaje
-                ['futurarsinbarreras@gmail.com',email],  # Cambia esto por el correo al cual enviarás el mensaje
-                fail_silently=False,
-            )
-            mensaje_exito = True  # Marca como enviado exitosamente
-            form = ContactoForm()  # Resetea el formulario
-    else:
-        form = ContactoForm()
+            try:
+                # Procesa el formulario y envía el correo electrónico
+                nombre = form.cleaned_data['nombre']
+                email = form.cleaned_data['email']
+                mensaje = form.cleaned_data['mensaje']
+                send_mail(
+                    'Nuevo mensaje de contacto',
+                    f'Nombre: {nombre}\nEmail: {email}\nMensaje: {mensaje}',
+                    'futurarsinbarreras@gmail.com',  # Cambia esto por el correo desde el cual enviarás el mensaje
+                    ['futurarsinbarreras@gmail.com',email],  # Cambia esto por el correo al cual enviarás el mensaje
+                    fail_silently=False,
+                )
+                # redirigir a una url con exito:
+                return redirect('contacto_exito')
+            except:
+                # redirigir si falla el envio:
+                return redirect('contacto_fallo')
+        else:
+            form = ContactoForm()
 
     context = {
         'donaciones': donaciones_data,
         'donaciones_cbu': donaciones_data_cbu,
         'form': form,
-        'mensaje_exito': mensaje_exito,
+        #'mensaje_exito': mensaje_exito,
     }
-    
+
     return render(request, 'core/donaciones.html', context)
 
 def contacto(request):
-    mensaje_exito = False  # Variable para indicar si se envió el formulario correctamente
+    # mensaje_exito = False  # Variable para indicar si se envió el formulario correctamente
 
     if request.method == 'POST':
         form = ContactoForm(request.POST)
         if form.is_valid():
-            # Procesa el formulario y envía el correo electrónico
-            nombre = form.cleaned_data['nombre']
-            email = form.cleaned_data['email']
-            mensaje = form.cleaned_data['mensaje']
-            send_mail(
-                'Nuevo mensaje de contacto',
-                f'Nombre: {nombre}\nEmail: {email}\nMensaje: {mensaje}',
-                'futurarsinbarreras@gmail.com',  # Cambia esto por el correo desde el cual enviarás el mensaje
-                ['futurarsinbarreras@gmail.com',email],  # Cambia esto por el correo al cual enviarás el mensaje
-                fail_silently=False,
-            )
-            mensaje_exito = True  # Marca como enviado exitosamente
-            form = ContactoForm()  # Resetea el formulario
+            try:
+                
+                # Procesa el formulario y envía el correo electrónico
+                nombre = form.cleaned_data['nombre']
+                email = form.cleaned_data['email']
+                mensaje = form.cleaned_data['mensaje']
+                send_mail(
+                    'Nuevo mensaje de contacto',
+                    f'Nombre: {nombre}\nEmail: {email}\nMensaje: {mensaje}',
+                    'futurarsinbarreras@gmail.com',  # Cambia esto por el correo desde el cual enviarás el mensaje
+                    ['futurarsinbarreras@gmail.com',email],  # Cambia esto por el correo al cual enviarás el mensaje
+                    fail_silently=False,
+                )
+                # redirigir a una url con exito:
+                return redirect('contacto_exito')
+            except:
+                # redirigir si falla el envio:
+                return redirect('contacto_fallo')
     else:
         form = ContactoForm()
 
-    return render(request, 'core/contacto.html', {'form': form, 'mensaje_exito': mensaje_exito})
+    return render(request, 'core/contacto.html', {'form': form})
 
+def contacto_exito(request):
+    return render(request, 'core/contacto_exito.html')
+
+def contacto_fallo(request):
+    return render(request, 'core/contacto_fallo.html')

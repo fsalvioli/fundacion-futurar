@@ -13,6 +13,7 @@ urlpatterns = [
     path('articulos/',views.articulos,name='articulos'),
     path('donaciones/',views.donaciones,name='donaciones'),
     path('contacto/',views.contacto,name='contacto'),
-    # agradecimiento de donacion:
-    #path('gracias/', views.gracias, name='gracias'), 
+    # contacto y donación redirección:
+    path('contacto/exito/', views.contacto_exito, name='contacto_exito'),
+    path('contacto/fallo/', views.contacto_fallo, name='contacto_fallo'),
 ]

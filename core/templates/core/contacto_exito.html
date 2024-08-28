@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+{% block title %}FUTURAR | Contacto-exitoso{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'core/css/contacto.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="contact-container adjustable-text">
+        <div class="success-message">
+            <h1>¡Gracias!</h1>
+            <p>Se ha enviado con éxito. Te redirigiremos al inicio en unos segundos.</p>
+        </div>
+        <script>
+            setTimeout(function(){
+                window.location.href = "{% url 'inicio' %}";
+            }, 5000);  // Redirige a "inicio" después de 5 segundos
+        </script>
+    </div>
+{% endblock %}
