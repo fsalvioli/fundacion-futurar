@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
 from .forms import ContactoForm, DonacionForm
+import logging
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.mail import send_mail
 from .models import Inicio, Nosotros, Programas, Actividades, Historias, Articulos, Donaciones, DonacionesCBU
 
-
+logger = logging.getLogger('django')
 
 def inicio(request):
     try:
@@ -88,7 +89,8 @@ def donaciones(request):
                 )
                 # redirigir a una url con exito:
                 return redirect('contacto_exito')
-            except:
+            except Exception as e:
+                logger.error(f"Error al enviar el mensaje de donaciones: {str(e)}")
                 # redirigir si falla el envio:
                 return redirect('contacto_fallo')
         else:
@@ -124,7 +126,8 @@ def contacto(request):
                 )
                 # redirigir a una url con exito:
                 return redirect('contacto_exito')
-            except:
+            except Exception as e:
+                logger.error(f"Error al enviar el mensaje de contacto: {str(e)}")
                 # redirigir si falla el envio:
                 return redirect('contacto_fallo')
     else:
